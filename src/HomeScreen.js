@@ -31,7 +31,7 @@ const HomeScreen = () => {
               <Icon
                 name="chevron-down"
                 type="material-community"
-                size={20}
+                size={19}
                 color="blue"
               />
             </Text>
