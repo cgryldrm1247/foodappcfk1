@@ -10,7 +10,7 @@ const CategoryCard = ({ imgUrl, title }) => {
         source={{
           uri: imgUrl,
         }}
-        style={{ height: 65, width: 65, borderRadius: 12 }}
+        style={{ height: 105, width:105, borderRadius: 12 }}
       />
       <View>
         <Text

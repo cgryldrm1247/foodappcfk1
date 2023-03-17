@@ -1,4 +1,10 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import CategoryCard from "./CategoryCard";
 
@@ -6,7 +12,7 @@ const Category = () => {
   return (
     <ScrollView
       contentContainerStyle={{
-        paddingHorizontal: 15,
+        paddingHorizontal: 5,
         paddingTop: 10,
       }}
       horizontal
@@ -16,6 +22,7 @@ const Category = () => {
         imgUrl="https://lezzetlikareler.com/images/gorseller/hamburger-fotograf-cekimi.jpg"
         title="test1"
       />
+
       <CategoryCard
         imgUrl="https://lezzetlikareler.com/images/gorseller/hamburger-fotograf-cekimi.jpg"
         title="test2"
