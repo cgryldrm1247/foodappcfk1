@@ -7,6 +7,7 @@ import StartPage from '../../src/StartPage';
 import LikeButton from '../LikeButton';
 import HomeScreen from '../../src/HomeScreen';
 import Refrigerator from '../../src/Refrigerator';
+import WheelScreen from '../../src/WheelScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ const Navigation = () => {
         <Stack.Screen name="LikeButton" component={LikeButton} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="Refrigerator" component={Refrigerator} />
+        {/* <Stack.Screen name="Wheel" component={WheelScreen} /> */}
 
 
       </Stack.Navigator>

@@ -24,7 +24,7 @@ const Footer = () => {
         <UserIcon color="#00CCBB" />
         <Text>Buz Dolabı</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer}>
+      <TouchableOpacity onPress={()=> navigation.navigate('Wheel')} style={styles.iconContainer}>
         <UserIcon color="#00CCBB" />
         <Text>Çarkıfelek</Text>
       </TouchableOpacity>
