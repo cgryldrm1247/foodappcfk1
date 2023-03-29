@@ -30,7 +30,7 @@ const Footer = () => {
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconContainer}>
         <UserIcon color="#00CCBB" />
-        <Text>Hesabım</Text>
+        <Text>Profilim</Text>
       </TouchableOpacity>
     </View>
   );

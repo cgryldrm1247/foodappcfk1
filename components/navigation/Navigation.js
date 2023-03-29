@@ -1,13 +1,14 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
-import LoginScreen from "../../src/LoginScreen";
-import RegisterScreen from "../../src/RegisterScreen";
-import StartPage from "../../src/StartPage";
-import LikeButton from "../LikeButton";
-import HomeScreen from "../../src/HomeScreen";
-import Refrigerator from "../../src/Refrigerator";
-//  import WheelScreen from '../../src/WheelScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React from 'react';
+import LoginScreen from '../../src/LoginScreen';
+import RegisterScreen from '../../src/RegisterScreen';
+import StartPage from '../../src/StartPage';
+import LikeButton from '../LikeButton';
+import HomeScreen from '../../src/HomeScreen';
+import Refrigerator from '../../src/Refrigerator';
+// import WheelScreen from '../../src/WheelScreen';
+
 
 const Stack = createNativeStackNavigator();
 
