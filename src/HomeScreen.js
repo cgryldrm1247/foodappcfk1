@@ -31,7 +31,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1, marginTop: 35, backgroundColor: "white", }}>
+    <SafeAreaView style={{ flex: 1, marginTop: 35, backgroundColor: "white" }}>
       {/* Header */}
 
       <View style={{}}></View>
@@ -41,7 +41,7 @@ const HomeScreen = () => {
       <View
         style={{
           alignItems: "center",
-          justifyContent: "space-between",
+
           paddingBottom: 2,
           marginHorizontal: 4,
           margin: 6,
@@ -74,11 +74,11 @@ const HomeScreen = () => {
           Yeni Lezzetleri Keşfet!
         </Text>
         {/*  Category */}
-        <Category  />
+        <Category />
 
         {/* FeaturedRow */}
         <FeaturedRow id="123" title="Mutfaklar" description="Türk Mutfağı" />
-         
+
         <FeaturedRow
           id="1234"
           title="Tarifler"

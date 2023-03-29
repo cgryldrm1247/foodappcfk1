@@ -27,7 +27,7 @@ const RegisterScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={require('../assets/img/loginTwo.png')}
+        source={require('../assets/img/RegisterScreen.png')}
         style={styles.image}
         resizeMode="cover"
       >
