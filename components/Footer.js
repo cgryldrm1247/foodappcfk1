@@ -1,7 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import {
-  ArrowLeftIcon,
   HeartIcon,
   HomeIcon,
   UserIcon,
@@ -17,18 +16,27 @@ const Footer = () => {
         <Text>Anasayfa</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconContainer}>
-        <HeartIcon color="#00CCBB"/>
+        <HeartIcon color="#00CCBB" />
         <Text>Favorilerim</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=>navigation.navigate('Refrigerator')} style={styles.iconContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Refrigerator")}
+        style={styles.iconContainer}
+      >
         <UserIcon color="#00CCBB" />
         <Text>Buz Dolabı</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=> navigation.navigate('Wheel')} style={styles.iconContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Wheel")}
+        style={styles.iconContainer}
+      >
         <UserIcon color="#00CCBB" />
         <Text>Çarkıfelek</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ProfileScreen")}
+        style={styles.iconContainer}
+      >
         <UserIcon color="#00CCBB" />
         <Text>Profilim</Text>
       </TouchableOpacity>
