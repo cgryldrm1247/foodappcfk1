@@ -1,55 +1,102 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { Avatar, Divider, Icon } from "react-native-elements";
+import MyAccountInformation from "../components/MyAccountInformation";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ProfilScreen() {
+  const navigation = useNavigation();
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.iconContainer}
+        >
+          <Icon
+            name="arrow-back"
+            type="material"
+            size={24}
+            style={styles.iconBack}
+          />
+        </TouchableOpacity>
         <Avatar
-          activeOpacity={0.5}
-          avatarStyle={{ borderColor: "white", borderRadius: 12 }}
-          containerStyle={{ backgroundColor: "#BDBDBD" }}
-          icon={{ name: "user", type: "font-awesome" }}
-          iconStyle={{ color: "white" }}
-          imageProps={{ resizeMode: "cover" }}
-          overlayContainerStyle={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-          placeholderStyle={{ backgroundColor: "transparent" }}
-          rounded
           size={100}
+          rounded
           source={{
             uri: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
           }}
-          title="P"
-          titleStyle={{ color: "white" }}
+          avatarStyle={styles.avatar}
+          containerStyle={styles.avatarContainer}
         />
-
-        <Text style={{ marginTop: 15 }}>Furkan KAPLAN</Text>
+        <Text style={styles.name}>Furkan KAPLAN</Text>
+        <View style={styles.detailsContainer}>
+          <View style={styles.detail}>
+            <Text style={styles.detailText}>fkaplanntr@gmail.com</Text>
+          </View>
+          <View style={styles.detail}>
+            <Text style={styles.detailText}>İstanbul</Text>
+          </View>
+        </View>
       </View>
-
-      <View style={styles.icon}>
-        <Text style={{ marginRight: "26.5%",}}>fkaplanntr@gmail.com</Text>
-        <Icon color="black" name="mail" size={20} />
-      </View>
-      <Divider
-        style={{ width: "80%", margin: 30 }}
-        color="#2089dc"
-        insetType="left"
-        subHeaderStyle={{}}
-        width={1}
-        orientation="horizontal"
-      />
+      <Divider style={styles.divider} />
+      <MyAccountInformation />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     alignItems: "center",
+    justifyContent: "flex-start",
     marginTop: 50,
   },
-  icon: {
-    marginTop: 2,
-    flexDirection: "row-reverse",
+  avatarContainer: {
+    backgroundColor: "#BDBDBD",
   },
+  avatar: {
+    borderColor: "white",
+    borderRadius: 12,
+  },
+  name: {
+    marginTop: 15,
+    fontWeight: "bold",
+  },
+  detailsContainer: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  detail: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  detailText: {
+    fontWeight: "bold",
+    marginLeft: 10,
+  },
+  divider: {
+    width: "80%",
+    alignSelf: "center",
+    marginVertical: 30,
+    borderWidth: 1,
+    borderColor: "#2089dc",
+  },
+  iconContainer: {
+    position: "absolute",
+    left: 10,
+    top: 10,
+    zIndex: 1,
+  },
+  iconBack: {},
 });

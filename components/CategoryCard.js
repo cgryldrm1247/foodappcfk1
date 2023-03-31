@@ -5,12 +5,12 @@ import { TouchableOpacity } from "react-native";
 const CategoryCard = ({ imgUrl, title }) => {
   return (
     
-    <TouchableOpacity style={{ padding: 2 }}>
+    <TouchableOpacity style={{ marginLeft: 9 }}>
       <Image
         source={{
           uri: imgUrl,
         }}
-        style={{ height: 105, width:105, borderRadius: 12 }}
+        style={{ height: 105, width:105, borderRadius: 6 }}
       />
       <View>
         <Text

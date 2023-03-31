@@ -8,6 +8,10 @@ import LikeButton from '../LikeButton';
 import HomeScreen from '../../src/HomeScreen';
 import Refrigerator from '../../src/Refrigerator';
 import ProfileScreen from '../../src/ProfileScreen';
+import MyUserInformation from '../../src/MyUserInformation';
+import MyAddressInformation from '../../src/MyAddressInformation';
+import PasswordChange from '../../src/PasswordChange';
+
 // import WheelScreen from '../../src/WheelScreen';
 
 
@@ -16,7 +20,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="StartPage" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='StartPage' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="StartPage" component={StartPage} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -24,6 +28,10 @@ const Navigation = () => {
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="Refrigerator" component={Refrigerator} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="MyUserInformation" component={MyUserInformation} />
+        <Stack.Screen name="MyAddressInformation" component={MyAddressInformation} />
+        <Stack.Screen name="PasswordChange" component={PasswordChange} />
+        
         {/* <Stack.Screen name="Wheel" component={WheelScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>

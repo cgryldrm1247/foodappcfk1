@@ -21,7 +21,6 @@ import { Icon } from "react-native-elements";
 import FeaturedRow from "../components/FeaturedRow";
 import Footer from "../components/Footer";
 
-
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -48,11 +47,7 @@ const HomeScreen = () => {
           margin: 6,
           flexDirection: "row",
         }}
-
-
       >
-
-
         <View
           style={{
             flexDirection: "row",
@@ -74,7 +69,6 @@ const HomeScreen = () => {
       </View>
 
       {/* body */}
-
 
       <ScrollView>
         <Text style={{ fontWeight: "bold", marginLeft: 15 }}>
