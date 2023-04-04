@@ -15,7 +15,7 @@ const Footer = () => {
         <HomeIcon color="#00CCBB" />
         <Text>Anasayfa</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer}>
+      <TouchableOpacity onPress={()=> navigation.navigate('Favorites')} style={styles.iconContainer}> 
         <HeartIcon color="#00CCBB" />
         <Text>Favorilerim</Text>
       </TouchableOpacity>

@@ -9,6 +9,7 @@ import React from "react";
 import { Avatar, Divider, Icon } from "react-native-elements";
 import MyAccountInformation from "../components/MyAccountInformation";
 import { useNavigation } from "@react-navigation/native";
+import { ArrowLeftIcon } from "react-native-heroicons/outline";
 
 export default function ProfilScreen() {
   const navigation = useNavigation();
@@ -20,12 +21,7 @@ export default function ProfilScreen() {
           onPress={() => navigation.goBack()}
           style={styles.iconContainer}
         >
-          <Icon
-            name="arrow-back"
-            type="material"
-            size={24}
-            style={styles.iconBack}
-          />
+        <ArrowLeftIcon onPress={() => navigation.goBack()} />
         </TouchableOpacity>
         <Avatar
           size={100}

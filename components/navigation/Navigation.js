@@ -11,8 +11,9 @@ import ProfileScreen from '../../src/ProfileScreen';
 import MyUserInformation from '../../src/MyUserInformation';
 import MyAddressInformation from '../../src/MyAddressInformation';
 import PasswordChange from '../../src/PasswordChange';
+import FavoritesScreen from '../../src/FavoritesScreen';
 
-// import WheelScreen from '../../src/WheelScreen';
+import WheelScreen from '../../src/WheelScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -31,8 +32,8 @@ const Navigation = () => {
         <Stack.Screen name="MyUserInformation" component={MyUserInformation} />
         <Stack.Screen name="MyAddressInformation" component={MyAddressInformation} />
         <Stack.Screen name="PasswordChange" component={PasswordChange} />
-        
-        {/* <Stack.Screen name="Wheel" component={WheelScreen} /> */}
+        <Stack.Screen name="Favorites" component={FavoritesScreen} />
+        <Stack.Screen name="WheelScreen" component={WheelScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

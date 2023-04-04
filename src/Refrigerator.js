@@ -102,7 +102,7 @@
 // export default Refrigeretor;
 
 // const styles = StyleSheet.create({});
-import { ArrowLeftIcon } from "../assets/svg/ArrowleftIcon";
+import { ArrowLeftIcon } from "react-native-heroicons/outline";
 import React from "react";
 import {
   StyleSheet,
