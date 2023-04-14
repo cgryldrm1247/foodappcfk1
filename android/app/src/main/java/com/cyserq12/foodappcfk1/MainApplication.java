@@ -14,6 +14,8 @@ import com.facebook.soloader.SoLoader;
 
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
+import com.cyserq12.foodappcfk1.BuildConfig;
+
 
 import java.util.List;
 

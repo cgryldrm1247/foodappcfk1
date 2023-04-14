@@ -10,6 +10,8 @@ import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
 import expo.modules.ReactActivityDelegateWrapper;
 
+import com.cyserq12.foodappcfk1.BuildConfig;
+
 public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {

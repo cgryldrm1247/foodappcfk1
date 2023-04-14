@@ -58,15 +58,10 @@ const LoginScreen = () => {
       return (
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}} >
           <Text>Logged in as {user.name}</Text>
+          <Text>TEBRİKLER BAŞARIYLA GİRİŞ YAPTINIZ!</Text>
         </View>
       );
-    } }
-
-
-
-
-
-
+    } };
 
   const handleLogin = () => {
     // Check if email is valid

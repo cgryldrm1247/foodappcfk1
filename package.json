@@ -12,8 +12,13 @@
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "expo": "~48.0.6",
+    "expo-auth-session": "~4.0.3",
+    "expo-crypto": "~12.2.1",
+    "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.4",
-    "firebase": "^9.19.1",
+    "expo-updates": "~0.16.4",
+    "expo-web-browser": "~12.1.1",
+    "firebase": "^9.6.11",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.71.6",
@@ -27,12 +32,7 @@
     "react-native-svg": "13.4.0",
     "react-native-text-input-interactive": "^0.1.4",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-wheel-of-fortune": "^1.5.4",
-    "expo-auth-session": "~4.0.3",
-    "expo-crypto": "~12.2.1",
-    "expo-web-browser": "~12.1.1",
-    "expo-updates": "~0.16.4",
-    "expo-splash-screen": "~0.18.1"
+    "react-native-wheel-of-fortune": "^1.5.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

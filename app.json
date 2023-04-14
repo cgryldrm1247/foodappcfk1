@@ -15,16 +15,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.cyserq12.foodappcfk1",
-      "config": {
-        "googleSignIn": {
-          "reservedClientId": "1015584010597-eutpuv5uvehquh8ginungdkbkikoas1e.apps.googleusercontent.com"
-        }
+      "bundleIdentifier": "com.cyserq12.foodappcfk1"
     },
-  },
     "android": {
       "package": "com.cyserq12.foodappcfk1",
-
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -34,6 +28,9 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
+      "googleSignIn": {
+        "reservedClientId": "1015584010597-eutpuv5uvehquh8ginungdkbkikoas1e.apps.googleusercontent.com"
+      },
       "eas": {
         "projectId": "c220aecf-dd7f-481f-8818-7f2da31bfee8"
       }
