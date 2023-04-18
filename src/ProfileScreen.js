@@ -10,9 +10,16 @@ import { Avatar, Divider, Icon } from "react-native-elements";
 import MyAccountInformation from "../components/MyAccountInformation";
 import { useNavigation } from "@react-navigation/native";
 import { ArrowLeftIcon } from "react-native-heroicons/outline";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 export default function ProfilScreen() {
   const navigation = useNavigation();
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigation.navigate("LoginScreen");
+  };
+
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -40,6 +47,9 @@ export default function ProfilScreen() {
           <View style={styles.detail}>
             <Text style={styles.detailText}>İstanbul</Text>
           </View>
+            <TouchableOpacity onPress={handleLogout} >
+              <Text style={styles.detailText}>Çıkış Yap</Text>
+            </TouchableOpacity>
         </View>
       </View>
       <Divider style={styles.divider} />

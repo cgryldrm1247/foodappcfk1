@@ -14,6 +14,8 @@ import * as webBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
 import * as React from "react";
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 webBrowser.maybeCompleteAuthSession();
 
@@ -23,45 +25,20 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [accesToken, setAccessToken] = React.useState(null);
-  const [user, setUser] = React.useState(null);
-  const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId:
-      "1015584010597-p90l40i2mvep4vvmc6avh89jjq17m947.apps.googleusercontent.com",
-    iosClientId:
-      "1015584010597-eutpuv5uvehquh8ginungdkbkikoas1e.apps.googleusercontent.com",
-    androidClientId:
-      "1015584010597-8rld79qcg0ae9r372rof6kjkhjdl912r.apps.googleusercontent.com",
-      redirectUri: 'https://auth.expo.io/@cyserq12/foodappcfk1',
-  });
-
-  React.useEffect(() => {
-    if (response?.type === "success") {
-      setAccessToken(response.authentication.accessToken);
-      {
-        accesToken && fetchUserInfo();
+  const handleSubmit = async () => {
+    if (email && password) {
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        console.log("User account created & signed in!");
+        navigation.navigate("HomeScreen");
+      } catch (error) {
+        console.error("Error signing up: ", error);
       }
     }
-  }, [response, accesToken]);
+  };
 
-  async function fetchUserInfo() {
-    let response = await fetch("https://www.googleapis.com/userinfo/v2/me", {
-      headers: { Authorization: `Bearer ${accesToken}` },
-    });
 
-    const userInfo = await response.json();
-    setUser(userInfo);
-  }
 
-  const ShowUserInfo = () => {
-    if (user) {
-      return (
-        <View style={{flex:1, alignItems:'center', justifyContent:'center'}} >
-          <Text>Logged in as {user.name}</Text>
-          <Text>TEBRİKLER BAŞARIYLA GİRİŞ YAPTINIZ!</Text>
-        </View>
-      );
-    } };
 
   const handleLogin = () => {
     // Check if email is valid
@@ -98,18 +75,18 @@ const LoginScreen = () => {
           style={styles.input}
           placeholder="Email"
           value={email}
-          onChangeText={setEmail}
+          onChangeText={value=>setEmail(value)}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
           secureTextEntry
           value={password}
-          onChangeText={setPassword}
+          onChangeText={value=>setPassword(value)}
         />
         <TouchableOpacity
           style={styles.loginButton}
-          onPress={() => navigation.navigate("HomeScreen")}
+          onPress={handleSubmit}
         >
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
@@ -119,24 +96,6 @@ const LoginScreen = () => {
         <TouchableOpacity onPress={()=>navigation.navigate('RegisterScreen')} style={styles.facebookButton}>
           <Text style={styles.facebookButtonText}>Üye ol</Text>
         </TouchableOpacity>
-
-        <View>
-        {user && <ShowUserInfo />}
-
-        {user === null &&
-        
-          <>
-          
-          <TouchableOpacity disabled={!request} onPress={()=> {promptAsync();}}  style={styles.googleButton}>
-          <Text style={styles.googleButtonText}>Continue with Google</Text>
-        </TouchableOpacity>
-          
-          </>}
-
-       
-          
-
-      </View>
 
       </View>
     </SafeAreaView>
