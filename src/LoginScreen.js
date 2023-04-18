@@ -116,6 +116,9 @@ const LoginScreen = () => {
         <TouchableOpacity style={styles.facebookButton}>
           <Text style={styles.facebookButtonText}>Continue with Facebook</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('RegisterScreen')} style={styles.facebookButton}>
+          <Text style={styles.facebookButtonText}>Üye ol</Text>
+        </TouchableOpacity>
 
         <View>
         {user && <ShowUserInfo />}

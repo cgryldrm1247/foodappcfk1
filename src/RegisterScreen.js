@@ -10,6 +10,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { auth } from '../firebaseConfig';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const { width, height } = Dimensions.get('window');
 
@@ -20,8 +22,17 @@ const RegisterScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
-  const handleRegister = () => {
+  const handleRegister = async () => {
     // Add code to handle registration here
+    if(email && password){
+      try {
+        await createUserWithEmailAndPassword(auth,email, password);
+        console.log("User account created & signed in!");
+        navigation.navigate('HomeScreen');
+      } catch (error) {
+        console.error("Error signing up: ", error);
+      }
+    }
   };
 
   return (
@@ -50,7 +61,7 @@ const RegisterScreen = () => {
             style={styles.input}
             placeholder="Email"
             value={email}
-            onChangeText={setEmail}
+            onChangeText={value=>setEmail(value)}
             placeholderTextColor={'white'}
             keyboardType="email-address"
           />
@@ -58,7 +69,7 @@ const RegisterScreen = () => {
             style={styles.input}
             placeholder="Password"
             value={password}
-            onChangeText={setPassword}
+            onChangeText={value=>setPassword(value)}
             placeholderTextColor={'white'}
             secureTextEntry={true}
           />

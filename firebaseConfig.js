@@ -38,6 +38,7 @@
 
 import { initializeApp, getApps } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   databaseURL: "https://foodrecipeapp-383612-default-rtdb.europe-west1.firebasedatabase.app",
@@ -54,5 +55,6 @@ const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 const db = getDatabase(app);
 
 export { db };
+export const auth = getAuth(app);
 
 
